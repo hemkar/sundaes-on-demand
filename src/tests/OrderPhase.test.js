@@ -55,7 +55,9 @@ test("Order phases for happy path", async () => {
   });
   userEvent.click(confirmOrderButton);
 
-  const thankYouHeader = screen.getByRole("heading", { name: /thank you!/i });
+  const thankYouHeader = await screen.findByRole("heading", {
+    name: /Thank You!/i,
+  });
   expect(thankYouHeader).toBeInTheDocument();
 
   const orderNumber = await screen.findByText(/order number/i);
@@ -71,5 +73,5 @@ test("Order phases for happy path", async () => {
   expect(toppingsTotal).toBeInTheDocument();
 
   await screen.findByRole("spinbutton", { name: "Vanilla" });
-  await screen.findByRole("cjeckbox", { name: "Cherries" });
+  await screen.findByRole("checkbox", { name: "Cherries" });
 });

@@ -17,7 +17,7 @@ export default function SummaryForm({ setOrderPhase }) {
 
   const popover = (
     <Popover id="termsandconditions-popover">
-      <Popover.Content>No ice cream will actually be delivered</Popover.Content>
+      <Popover.Body>No ice cream will actually be delivered</Popover.Body>
     </Popover>
   );
 
